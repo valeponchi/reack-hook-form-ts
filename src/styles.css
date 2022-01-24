@@ -1,0 +1,166 @@
+html {
+  --primary-blue: #5555e4;
+  --primary-red: rgba(240, 66, 66, 0.753);
+  --primary-white: white;
+}
+
+.App {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+body {
+  background: var(--primary-blue);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  color: white;
+  padding: 0 20px;
+
+  display: grid;
+  place-items: center;
+}
+
+.form-container {
+  background-color: var(--primary-white);
+  display: grid;
+  gap: 10px;
+  padding-left: 30px;
+  padding-bottom: 30px;
+}
+
+.h1 {
+  margin-top: 80px;
+  color: black;
+  font-size: 25px;
+  padding-bottom: 10px;
+}
+
+.box {
+  display: grid;
+  gap: 10px;
+  grid-template:
+    "name     textarea  textarea" 1fr
+    "company  textarea  textarea" 1fr
+    "telephone textarea textarea" 1fr
+    "email    textarea  textarea" 1fr
+    "privacy  clear     submit" 1fr/
+    2fr 1fr 1fr;
+}
+
+input {
+  display: block;
+  box-sizing: border-box;
+  width: 90%;
+  border-radius: 4px;
+  border: 2px solid var(--primary-blue);
+  padding: 10px 15px;
+  font-size: 14px;
+  outline: none;
+}
+
+input:required:valid {
+  border-color: green;
+}
+input:invalid {
+  border-color: red;
+}
+input:required:focus:valid {
+  background: url("https://assets.digitalocean.com/labs/icons/hand-thumbs-up.svg")
+    no-repeat 95% 50% lightgreen;
+  background-size: 25px;
+}
+input:focus:invalid {
+  background: url("https://assets.digitalocean.com/labs/icons/exclamation-triangle-fill.svg")
+    no-repeat 95% 50% lightsalmon;
+  background-size: 25px;
+}
+
+/* input:focus {
+  border: 3px solid var(--primary-red);
+} */
+
+input[type="submit"],
+.button {
+  background: var(--primary-blue);
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: 100;
+  /* letter-spacing: 2px; */
+  display: block;
+  appearance: none;
+  border-radius: 4px;
+  /* width: 90%; */
+  text-transform: capitalize;
+}
+
+.name {
+  grid-area: name;
+}
+
+.company {
+  grid-area: company;
+}
+
+.telephone {
+  grid-area: telephone;
+}
+
+.email {
+  grid-area: email;
+}
+
+.textarea {
+  grid-area: textarea;
+  /* height: 80px; */
+}
+
+.privacy {
+  grid-area: privacy;
+
+  color: black;
+  font-size: 0.5rem;
+  font-weight: 500;
+  /* width: 50%; */
+}
+
+.clear {
+  grid-area: clear;
+}
+
+.link,
+a {
+  color: var(--primary-blue);
+  font-size: 0.5rem;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.error {
+  color: var(--primary-red);
+  /* gap: 30px; */
+}
+
+@media screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .box {
+    display: grid;
+    grid-template:
+      "name" 1fr
+      "company" 1fr
+      "telephone" 1fr
+      "email" 1fr
+      "textarea" 1fr
+      "submit" 1fr
+      "privacy" 1fr
+      "clear" 1fr/
+      1fr;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  /* For desktop: */
+}
